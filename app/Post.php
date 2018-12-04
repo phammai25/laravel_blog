@@ -13,5 +13,11 @@ class Post extends Model
     public function user(){
         return $this->belongsTo('App\Post');
     }
+
+    public function hey($tag=null,$type=false)
+    {
+        return $tag;
+        
+    }
    
 }

@@ -13,7 +13,7 @@
         <div style="margin-left: 20px" class="panel-heading"><p style="color: blue"><a href=""><?php echo $viewpost['tag']?></a></p></div> 
         <div class="panel-body">
               <div style="margin-left: 20px"><p ><?php echo $viewpost['catalog']?></p></div>
-              <div style="margin-left: 20px"><p ><?php echo $viewpost['content']?></p></div>
+              <div style="margin-left: 20px"><p ><?php echo nl2br($viewpost['content'])?></p></div>
               <div style="margin-left: 20px"><p style="color: green">
               <?php
                   if($viewpost['status']=='0'){ echo "Public";}

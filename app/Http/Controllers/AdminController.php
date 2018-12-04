@@ -29,6 +29,11 @@ class AdminController extends Controller
         $post =  Post::where('status','0')->get();
         return view('reviewpost')->with('post',$post);
     }
+     public function unpublicPost()
+    {
+        $post =  Post::where('status','1')->get();
+        return view('unpublicpost')->with('post',$post);
+    }
     public function publicpost($id)
     {
         $viewpost = Post::find($id);
@@ -62,5 +67,18 @@ class AdminController extends Controller
        
         return Redirect::to(url('/admin/member_
             profile'));
+    }
+
+    function deletepost($id){
+        $viewpost = Post::find($id);
+        return view('admindeletepost')->with('viewpost',$viewpost);
+    }
+    public function deleteposted($id)
+    {
+        
+        $post = Post::find($id);
+        $post->delete();
+        return Redirect::to(url('/admint'));
+    
     }
 }

@@ -15,7 +15,7 @@
 
 <div class="container">
   <h2>Create Post</h2>
-  <form class="form-horizontal" action="http://127.0.0.1:8000/savepost" name="myform" id="form1" method="POST" >
+  <form class="form-horizontal" action="{{ asset('savepost') }}" name="myform" id="form1" method="POST" >
   	<input type="hidden" name="_token" value="{{csrf_token()}}">
     <div class="form-group">
       <label class="control-label col-sm-2" for="tag">Tag</label>
